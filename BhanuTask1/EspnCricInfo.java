@@ -22,28 +22,31 @@ public class EspnCricInfo {
 
     public Batsman addBatsman(String name, int runScored, int centuries, int halfcenturies) {
         if (noOfBatsmans < size - 1) {
-            batsmens[noOfBatsmans] = new Batsman(name, runScored, centuries, halfcenturies);
+            Batsman newbatsman = new Batsman(name, runScored, centuries, halfcenturies);
+            batsmens[noOfBatsmans]=newbatsman;
             noOfBatsmans++;
-            System.out.println("generated id is" + Batsman.getId());
-
         }
 
         return null;
     }
 
     public Batsman updateBatsmanStats(int id, int centuries, int halfcenturies) {
-        if (id >= 0 && id < noOfBatsmans && batsmens[id] != null) {
-            batsmens[id].setCenturies(centuries);
-            batsmens[id].setHalfCenturies(halfcenturies);
-            return batsmens[id];
+        for(int i=0;i < noOfBatsmans;i++) {
+            if (batsmens[i].getId() == id) {
+                batsmens[i].setCenturies(centuries);
+                batsmens[i].setHalfCenturies(halfcenturies);
+                return batsmens[i];
+            }
         }
         return null;
 
     }
 
     public Batsman getBatsmen(int batsmanid) {
-        if (batsmanid >= 0 && batsmanid < noOfBatsmans && batsmens[batsmanid] != null) {
-            return batsmens[batsmanid];
+        for(int i=0;i<noOfBatsmans;i++) {
+            if (batsmens[i].getId()==batsmanid) {
+                return batsmens[i];
+            }
         }
         return null;
     }

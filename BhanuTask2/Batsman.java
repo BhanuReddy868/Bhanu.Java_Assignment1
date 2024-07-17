@@ -1,18 +1,13 @@
 package BhanuTask2;
 
 public class Batsman {
-   private static int id;
+    private static int idgenerator=10;
+   private  int id;
     private String name;
     private int runsScored;
     private int centuries;
     private int halfCenturies;
-    private static int idgenerator=100000;
 
-
-
-   public Batsman(){
-        this.id=++idgenerator;
-   }
 
     public Batsman(String name, int runsScored,int centuries, int halfCenturies) {
         this.id=++idgenerator;
@@ -22,10 +17,9 @@ public class Batsman {
         this.runsScored = runsScored;
     }
 
-    public static int getId(){
+    public int getId(){
         return id;
     }
-
     public String getName() {
 
         return name;
@@ -47,10 +41,19 @@ public class Batsman {
         this.halfCenturies = halfCenturies;
     }
 
+    @Override
+    public String toString() {
+        return "id=" + id +
+                " name='" + name +
+                " runsScored=" + runsScored +
+                " centuries=" + centuries +
+                " halfCenturies=" + halfCenturies;
+    }
 
     public int getRunsScored() {
         return runsScored;
     }
+
 
 }
 

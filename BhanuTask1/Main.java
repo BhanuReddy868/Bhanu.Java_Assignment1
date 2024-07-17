@@ -9,16 +9,19 @@ public class Main {
         espn.addBatsman("rohit", 3000, 45, 97);
         espn.addBatsman("Dhoni", 10000, 100, 100);
         espn.addBatsman("Dube", 4000, 56, 90);
+        espn.addBatsman("abhishek sharma",2000,15,50);
 
         Batsman[] batsmen = espn.getBatsmens();
         for (Batsman batsman : batsmen) {
             if (batsman != null) {
-                System.out.println("Name : " + batsman.getName() + " runScored : " + batsman.getRunsScored() + "   centuries : " + batsman
-                        .getCenturies() + " half-Centuries : " + batsman.getHalfCenturies());
+                System.out.println(batsman);
             }
 
         }
-        Batsman updatedBatsman = espn.updateBatsmanStats(1, 50, 100);
+
+        System.out.println("no of batsmans added is : " + espn.getNoOfBatsmans());
+        System.out.println();
+        Batsman updatedBatsman = espn.updateBatsmanStats(12, 50, 100);
         if (updatedBatsman != null) {
             System.out.println("Updated Batsman: " + updatedBatsman.getName() +
                     ", Centuries: " + updatedBatsman.getCenturies() +
@@ -26,15 +29,15 @@ public class Main {
         } else {
             System.out.println("Batsman not found.");
         }
-        System.out.println();
-        Batsman getbatsman = espn.getBatsmen(10002);
-        if (getbatsman != null) {
-            System.out.println("ID : " + getbatsman.getId() + " Name : " + getbatsman.getName() + " runScored : " + getbatsman.getRunsScored() + "   centuries : " + getbatsman
-                    .getCenturies() + " half-Centuries : " + getbatsman.getHalfCenturies());
 
+        System.out.println();
+
+        Batsman getbatsman = espn.getBatsmen(12);
+        if (getbatsman != null) {
+            System.out.println("The batsmen details are : "+getbatsman);
+        }else{
+            System.out.println("batsman not fount");
         }
-        System.out.println("no of batsmans added is : " + espn.getNoOfBatsmans());
-        ;
 
     }
 }
