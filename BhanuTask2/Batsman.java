@@ -2,8 +2,8 @@ package BhanuTask2;
 
 public class Batsman {
     private static int idgenerator=10;
-   private  int id;
-    private String name;
+   private  final int id;
+    private final String name;
     private int runsScored;
     private int centuries;
     private int halfCenturies;

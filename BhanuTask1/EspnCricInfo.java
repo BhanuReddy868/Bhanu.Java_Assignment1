@@ -20,14 +20,13 @@ public class EspnCricInfo {
         return noOfBatsmans;
     }
 
-    public Batsman addBatsman(String name, int runScored, int centuries, int halfcenturies) {
+    public int addBatsman(String name, int runScored, int centuries, int halfcenturies) {
         if (noOfBatsmans < size - 1) {
             Batsman newbatsman = new Batsman(name, runScored, centuries, halfcenturies);
-            batsmens[noOfBatsmans]=newbatsman;
+            batsmens[noOfBatsmans] = newbatsman;
             noOfBatsmans++;
         }
-
-        return null;
+            return 0;
     }
 
     public Batsman updateBatsmanStats(int id, int centuries, int halfcenturies) {
